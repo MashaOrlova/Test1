@@ -58,6 +58,39 @@ namespace Test.Pages
         [FindsBy(How = How.XPath, Using = "//ul[@class='result']")]
         private IWebElement searchResultMarker;
 
+        [FindsBy(How = How.XPath, Using = "//span[text()='Погода']")]
+        private IWebElement buttonSearchWeather;
+
+        [FindsBy(How = How.XPath, Using = "//a[@class='information__link']")]
+        private IWebElement searchResultMarker2;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Гороскопы']")]
+        private IWebElement buttonSearchHoroscop;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Лев']")]
+        private IWebElement buttonSearchHoroscopLion;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Гороскоп на сегодня: Лев']")]
+        private IWebElement searchLabelLion;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Мой Мир']")]
+        private IWebElement buttonOpenMyMir;
+
+        [FindsBy(How = How.XPath, Using = "//a[@class='b-welcome-game__logo']")]
+        private IWebElement searchResultMarker3;
+
+        [FindsBy(How = How.XPath, Using = "//span[@class='js-text-inner pm-toolbar__button__text__inner  pm-toolbar__button__text__inner_noicon pm-toolbar__button__text__inner_current']")]
+        private IWebElement buttonContact;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Сортировать']")]
+        private IWebElement buttonSortContact;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='По популярности']")]
+        private IWebElement buttonSortContactPopul;
+
+        [FindsBy(How = How.XPath, Using = "//a[@class='messageline__body__link']")]
+        private IWebElement searchResultMarker4;
+
         public MainPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -123,5 +156,38 @@ namespace Test.Pages
         {
             return searchResultMarker.Displayed;
         }
+
+        public void SeeWeather()
+        {
+            buttonSearchWeather.Click();
+        }
+
+        public bool SeeCompleted()
+        {
+            return searchResultMarker2.Displayed;
+        }
+
+        public void SeeHoroscope()
+        {
+            buttonSearchHoroscop.Click();
+            buttonSearchHoroscopLion.Click();
+        }
+        public bool SeeCompletedHoroscop()
+        {
+            return searchLabelLion.Displayed;
+        }
+
+        public void SortContact()
+        {
+            buttonContact.Click();
+            buttonSortContact.Click();
+            buttonSortContactPopul.Click();
+        }
+
+        public bool SortCompletedContact()
+        {
+            return searchResultMarker4.Displayed;
+        }
+        
     }
 }

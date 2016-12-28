@@ -7,6 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
 using Test.Steps;
+
 namespace Test.Tests
 {
     class Tests
@@ -55,6 +56,41 @@ namespace Test.Tests
         {
             step.SearchWorking(SearchString);
             Assert.True(step.IsSearchWorking());
+        }
+
+        [Test]
+        public void SeeWeatherTest()
+       {
+           step.SearchWeather();
+           Assert.True(step.IsSeeWeather());
+       }
+
+        [Test]
+        public void SeeHoroscopeTest()
+        {
+            step.SearchHoroscopLion();
+            Assert.True(step.IsSearchHoroscope());
+        }
+
+        [Test]
+        public void OpenMyMirTest()
+        {
+            step.OpenMyMir(username, password);
+            Assert.True(step.IsOpenMyMir());
+        }
+
+        [Test]
+        public void CloseMyMirTest()
+        {
+            step.CloseMyMir(username, password);
+            Assert.True(step.IsCloseMyMir());
+        }
+
+        [Test]
+        public void SortContactTest()
+        {
+            step.SortContact(username, password);
+            Assert.True(step.IsContactSort());
         }
     }
 }

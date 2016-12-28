@@ -86,5 +86,71 @@ namespace Test.Steps
             return mainpage.SearchCompleted();
         }
 
+        public void SearchWeather()
+        {
+            Pages.MainPage mainpage = new Pages.MainPage(driver);
+            mainpage.OpenPage();
+            mainpage.SeeWeather();
+        }
+
+        public bool IsSeeWeather()
+        {
+            Pages.MainPage mainpage = new Pages.MainPage(driver);
+            return mainpage.SeeCompleted();
+        }
+
+        public void SearchHoroscopLion()
+        {
+            Pages.MainPage mainpage = new Pages.MainPage(driver);
+            mainpage.OpenPage();
+            mainpage.SeeHoroscope();
+        }
+
+        public bool IsSearchHoroscope()
+        {
+            Pages.MainPage mainpage = new Pages.MainPage(driver);
+            return mainpage.SeeCompletedHoroscop();
+        }
+
+        public void OpenMyMir(string username, string password)
+        {
+            Pages.MyMirPage mypage = new Pages.MyMirPage(driver);
+            mypage.OpenPage();
+            mypage.OpenMyMir(username, password);
+        }
+
+        public bool IsOpenMyMir()
+        {
+            Pages.MyMirPage mypage = new Pages.MyMirPage(driver);
+            return mypage.OpenCompletedMyMir();
+        }
+
+        public void CloseMyMir(string username, string password)
+        {
+            Pages.MyMirPage mypage = new Pages.MyMirPage(driver);
+            mypage.OpenPage();
+            mypage.OpenMyMir(username, password);
+            mypage.CloseMyMir();
+        }
+
+        public bool IsCloseMyMir()
+        {
+            Pages.MyMirPage mypage = new Pages.MyMirPage(driver);
+            return mypage.CloseCompletedMyMir();
+        }
+
+        public void SortContact(string username, string password)
+        {
+            Pages.MainPage mainpage = new Pages.MainPage(driver);
+            mainpage.OpenPage();
+            mainpage.Login(username, password);
+            mainpage.SortContact();
+        }
+
+        public bool IsContactSort()
+        {
+            Pages.MainPage mainpage = new Pages.MainPage(driver);
+            return mainpage.SortCompletedContact();
+        }
     }
 }
